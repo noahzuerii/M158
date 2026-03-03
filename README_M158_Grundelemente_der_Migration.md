@@ -53,11 +53,3 @@ Ziel dieser Aufgabe ist es:
     └── Abgaben/
         ├── README.md
         └── Übung- Grundelemente der Migration - Vorname Nachname.md
-
-------------------------------------------------------------------------
-
-## ✍️ Autor
-
-Vorname Nachname\
-Ausbildung Informatiker Plattformentwicklung\
-Datum: (eintragen)
