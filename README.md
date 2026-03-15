@@ -15,12 +15,20 @@ Dieses Repository enthält die Übungen und Lösungen zum Modul M158. Im Modul g
 
 ## 📁 Inhalt
 
+### 📂 Aufgaben Theorie
+
 | Datei | Beschreibung |
 |-------|-------------|
 | [`Grundelemente_der_Migration.md`](./Aufgaben%20Theorie/Grundelemente_der_Migration.md) | Übung zu den Grundelementen der Migration (Kapitel 1 & 2): Definition, Gründe, Hard-/Software-Migration, Reengineering |
 | [`Migrationsansätze.md`](./Aufgaben%20Theorie/Migrationsansätze.md) | Übung zu Migrationsansätzen (Kapitel 3): Übersicht der Ansätze, gewählter Ansatz, Durchführungsplan |
 | [`übung_pfade.md`](./Aufgaben%20Theorie/übung_pfade.md) | Übung zu absoluten und relativen Pfaden (lokal und im Netz) |
 | [`loesungen_cms_db.md`](./Aufgaben%20Theorie/loesungen_cms_db.md) | Lösungen zu den Übungen CMS-DB Connection: Prozessablauf, Technologiezuordnung, Implementierung der Datenbank-Konfiguration |
+
+### 📂 Projekt LB2
+
+| Datei | Beschreibung |
+|-------|-------------|
+| [`Phase1.md`](./Projekt%20LB2/Phase1.md) | Projektplan (Auftrag #1) für die CRM-Migration: Ausgangslage, Migrationsvarianten, Ressourcenplanung, Ausfallzeit-Strategie, Zeitplan (KW 12–17) und Testkatalog |
 
 ---
 
