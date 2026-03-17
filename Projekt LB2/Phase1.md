@@ -25,7 +25,7 @@ Da das System an 5 bis 6 Tagen pro Woche (Mo-Sa) aktiv verwendet wird und ein Au
 
 ---
 
-## 3. Ressourcenplanung: Zeitaufwand und Kosten
+## 3. Ressourcenplanung:
 
 Die folgende Kostenschätzung basiert auf der empfohlenen Variante A. Sie umfasst alle Schritte von der Planung bis zum finalen Monitoring.
 
@@ -84,7 +84,7 @@ Um einen reibungslosen Ablauf zu gewährleisten und die Anforderungen des Moduls
 
 ---
 
-## 6. Testkatalog (Planungsentwurf)
+## 6. Testkatalog
 
 Folgende Tests werden, dann in der Phase 5 durchgeführt, um den Projekterfolg zu verifizieren:
 
@@ -96,3 +96,16 @@ Folgende Tests werden, dann in der Phase 5 durchgeführt, um den Projekterfolg z
 | **T04** | Applikation | Login ins CRM mit Admin-Credentials. | Dashboard wird fehlerfrei geladen. |
 | **T05** | Daten-Integrität | Stichprobe: Letzter erstellter Kunde vor Migration suchen. | Datensatz ist vollständig vorhanden. |
 | **T06** | Schreibrechte | Einen neuen Test-Kontakt im CRM anlegen. | Eintrag wird in der DB gespeichert. |
+
+## 7. Gantt Diagram des Projekts
+Projektphase                         KW12  KW13  KW14  KW15  KW16  KW17
+----------------------------------------------------------------------
+1. Planung & IST-Analyse            ██████
+2. Umgebung aufbauen                      ██████
+3. Zielsystem & Sicherheit                   ██████
+4. Migration (Testlauf / Dry-Run)                ██████
+5. Echt-Migration & Deployment                      ██████
+6. Testing & Monitoring                              ████
+7. Projektabschluss & Doku                               ██████
+----------------------------------------------------------------------
+Legende: █ = aktive Phase
