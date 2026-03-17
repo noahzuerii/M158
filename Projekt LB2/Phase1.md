@@ -83,6 +83,8 @@ Das System weist folgende Schwächen auf:
 
 Das System ist technisch veraltet und stellt ein Sicherheitsrisiko dar. Eine Migration ist zwingend notwendig.
 
+Um diese Problematiken nachhaltig zu beheben, die IT-Sicherheit zu erhöhen und von neuen Funktionen zu profitieren, hat man sich für ein **vTiger Upgrade** entschieden.
+
 ---
 
 ## 3. Architekturdiagramm (IST-Zustand)
@@ -97,6 +99,13 @@ flowchart LR
 ```
 
 ---
+
+## 4. Screenshots & Anlagen
+
+![Screenshot 1](../Bilder/Screenshot%202026-03-17%20151435.png)
+![Screenshot 2](../Bilder/Screenshot%202026-03-17%20151459.png)
+![Screenshot 3](../Bilder/Screenshot%202026-03-17%20151524.png)
+
 
 ## 4. SOLL-Architektur (modern)
 
