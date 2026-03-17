@@ -25,7 +25,7 @@ Das bestehende CRM-System basiert auf einer monolithischen Architektur.
 - Version: 2.2.15  
 - Build: 2014  
 
-👉 Bewertung:
+Bewertung:
 - End-of-Life
 - keine Sicherheitsupdates
 
@@ -38,7 +38,7 @@ Das bestehende CRM-System basiert auf einer monolithischen Architektur.
 - Port: 3306  
 - Datenbank: `vtigercrm`  
 
-👉 Analyse:
+Analyse:
 - Anzahl Tabellen: 491
 - Zentrale Tabellen:
   - vtiger_users
@@ -48,7 +48,7 @@ Das bestehende CRM-System basiert auf einer monolithischen Architektur.
   - vtiger_troubletickets
   - vtiger_crmentity
 
-👉 Bewertung:
+Bewertung:
 - stark veraltet
 - Sicherheitsrisiko
 
@@ -61,7 +61,7 @@ Das bestehende CRM-System basiert auf einer monolithischen Architektur.
   - http://localhost:8181
   - SSH: localhost:2222
 
-👉 Bewertung:
+Bewertung:
 - nicht produktionsfähig
 - nur Testumgebung
 
