@@ -98,14 +98,46 @@ Folgende Tests werden, dann in der Phase 5 durchgeführt, um den Projekterfolg z
 | **T06** | Schreibrechte | Einen neuen Test-Kontakt im CRM anlegen. | Eintrag wird in der DB gespeichert. |
 
 ## 7. Gantt Diagram des Projekts
-Projektphase                         KW12  KW13  KW14  KW15  KW16  KW17
-----------------------------------------------------------------------
-1. Planung & IST-Analyse            ██████
-2. Umgebung aufbauen                      ██████
-3. Zielsystem & Sicherheit                   ██████
-4. Migration (Testlauf / Dry-Run)                ██████
-5. Echt-Migration & Deployment                      ██████
-6. Testing & Monitoring                              ████
-7. Projektabschluss & Doku                               ██████
-----------------------------------------------------------------------
-Legende: █ = aktive Phase
+gantt
+    title CRM Migration Projekt
+    dateFormat  YYYY-MM-DD
+    axisFormat  %d.%m
+
+    section Planung & Analyse
+    Testumgebung bereitstellen     :a1, 2026-03-16, 2d
+    IST-Analyse System             :a2, after a1, 2d
+    Architekturdiagramm erstellen  :a3, after a2, 1d
+    Projektplan & Testkatalog      :a4, after a3, 1d
+
+    section Umgebung aufbauen
+    VM erstellen                   :b1, 2026-03-23, 1d
+    Netzwerk konfigurieren         :b2, after b1, 1d
+    Webserver installieren         :b3, after b2, 1d
+    Datenbank einrichten           :b4, after b3, 1d
+
+    section Sicherheit & Zielsystem
+    Server Hardening               :c1, 2026-03-30, 2d
+    SFTP/FTPS einrichten           :c2, after c1, 1d
+    Admin Tools installieren       :c3, after c2, 1d
+    Snapshots erstellen            :c4, after c3, 1d
+
+    section Testmigration (Dry-Run)
+    Backup erstellen               :d1, 2026-04-06, 1d
+    Daten importieren              :d2, after d1, 2d
+    Konfiguration anpassen         :d3, after d2, 1d
+    Fehler beheben                 :d4, after d3, 1d
+
+    section Echtmigration
+    System Read-Only setzen        :e1, 2026-04-13, 1d
+    Finaler Datenexport            :e2, after e1, 1d
+    Datenmigration                 :e3, after e2, 2d
+    DNS Umschaltung                :e4, after e3, 1d
+
+    section Testing & Monitoring
+    Funktionstests durchführen     :f1, 2026-04-16, 1d
+    Datenintegrität prüfen         :f2, after f1, 1d
+    Monitoring einrichten          :f3, after f2, 1d
+
+    section Abschluss
+    Fehlerbehebung                 :g1, 2026-04-20, 2d
+    Dokumentation finalisieren     :g2, after g1, 2d
