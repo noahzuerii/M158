@@ -1,7 +1,7 @@
 # Phase 1: Projektplan & IST-Analyse – CRM Migration
 
 ## 1. Ausgangslage und Projektziele
-Das bestehende CRM-System (`crmserver.sample.ch`) wird aktuell als lokale virtuelle Maschine (on-premise) betrieben. Im Rahmen dieses Projekts erfolgt eine umfassende Modernisierung. Der Auftrag umfasst die vollständige Migration auf ein neues Betriebssystem (OS) mit einem neuen Web- und Datenbank-Server. Dabei muss zwingend sichergestellt werden, dass die Datenmigration komplett und verlustfrei abläuft und das Sicherheitsniveau der gesamten Infrastruktur spürbar erhöht wird.
+Das bestehende CRM-System wird aktuell als lokale virtuelle Maschine (on-premise) betrieben. Im Rahmen dieses Projekts erfolgt eine umfassende Modernisierung. Der Auftrag umfasst die vollständige Migration auf ein neues Betriebssystem (OS) mit einem neuen Web- und Datenbank-Server. Dabei muss zwingend sichergestellt werden, dass die Datenmigration komplett und verlustfrei abläuft und das Sicherheitsniveau der gesamten Infrastruktur spürbar erhöht wird.
 
 Der erste Schritt besteht in der Projektvorbereitung: Das bestehende System wird anhand eines Exports in einer isolierten Testumgebung bereitgestellt. Anschliessend wird eine detaillierte IST-Analyse durchgeführt.
 
@@ -208,12 +208,42 @@ Ein vollständiger Systemwechsel (Variante B) wäre zwar technologisch moderner,
 
 ---
 
-## 8. Strategie zur Minimierung der Ausfallzeit
+## 8. Analyse der Webapplikation (CRM)
 
-- Parallelaufbau
-- Testmigration
-- Cut-Over am Wochenende
+Im Rahmen der IST-Analyse wurde die CRM-Applikation direkt über den Webbrowser untersucht.
 
+Der Zugriff erfolgte über:
+http://127.0.0.1:8181/vtigercrm/
+
+Nach Anpassung der Administrator-Zugangsdaten in der Datenbank konnte ein erfolgreicher Login durchgeführt werden.
+
+### Beobachtungen
+
+- Das Dashboard (Startseite) wird korrekt geladen
+- Die Navigation enthält zentrale CRM-Module:
+  - Kalender
+  - Leads
+  - Organisationen (Firmen)
+  - Personen (Kontakte)
+  - Verkaufschancen
+  - Produkte
+  - Tickets
+- Es sind bereits reale Datensätze vorhanden (z. B. Aktivitäten von Benutzern)
+- Statistiken und Diagramme werden angezeigt
+- Neue Einträge können erstellt werden (funktionale Grundfähigkeit gegeben)
+
+### Technische Bewertung
+
+Die Applikation ist grundsätzlich funktionsfähig, weist jedoch mehrere Schwächen auf:
+
+- Veraltete Benutzeroberfläche
+- Teilweise fehlerhafte Requests („Illegal request“)
+- Abhängigkeit von sehr alten Softwareversionen (Apache 2.2, MySQL 5.1)
+- Unsichere Passwortverwaltung (Reset über Datenbank möglich)
+
+### Schlussfolgerung
+
+Das CRM-System ist aktuell noch betriebsfähig, jedoch technisch veraltet und nur eingeschränkt stabil. Die Analyse bestätigt, dass eine Migration notwendig ist, um Sicherheit, Stabilität und Zukunftsfähigkeit zu gewährleisten.
 ---
 
 ## 9. Gantt Diagram
