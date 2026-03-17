@@ -186,9 +186,8 @@ Die Kosten für Variante B (Systemwechsel) sind deutlich höher aufgrund:
 - zusätzlicher Entwicklungsarbeit (Data Mapping)
 - Schulungsaufwand
 - längerer Projektlaufzeit
----
 
-### Schlussfolgerung
+#### 6.7 Schlussfolgerung
 
 Aufgrund der geringeren Risiken, der kürzeren Ausfallzeit, der geringeren Kosten sowie der besseren Planbarkeit wird Variante A (Upgrade von Vtiger) als optimale Lösung gewählt.
 
