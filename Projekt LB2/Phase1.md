@@ -98,10 +98,11 @@ Folgende Tests werden, dann in der Phase 5 durchgeführt, um den Projekterfolg z
 | **T06** | Schreibrechte | Einen neuen Test-Kontakt im CRM anlegen. | Eintrag wird in der DB gespeichert. |
 
 ## 7. Gantt Diagram des Projekts
+```mermaid
 gantt
     title CRM Migration Projekt
-    dateFormat  YYYY-MM-DD
-    axisFormat  %d.%m
+    dateFormat YYYY-MM-DD
+    axisFormat %d.%m
 
     section Planung & Analyse
     Testumgebung bereitstellen     :a1, 2026-03-16, 2d
@@ -141,3 +142,6 @@ gantt
     section Abschluss
     Fehlerbehebung                 :g1, 2026-04-20, 2d
     Dokumentation finalisieren     :g2, after g1, 2d
+
+    milestone Go-Live              :milestone, 2026-04-18, 0d
+```
