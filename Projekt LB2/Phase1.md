@@ -99,14 +99,6 @@ flowchart LR
 ```
 
 ---
-
-## 4. Screenshots & Anlagen
-
-![Screenshot 1](../Bilder/Screenshot%202026-03-17%20151435.png)
-![Screenshot 2](../Bilder/Screenshot%202026-03-17%20151459.png)
-![Screenshot 3](../Bilder/Screenshot%202026-03-17%20151524.png)
-
-
 ## 4. SOLL-Architektur (modern)
 
 ```mermaid
@@ -254,6 +246,11 @@ Die Applikation ist grundsätzlich funktionsfähig, weist jedoch mehrere Schwäc
 ### Schlussfolgerung
 
 - Das CRM-System ist aktuell noch betriebsfähig, jedoch technisch veraltet und nur eingeschränkt stabil. Die Analyse bestätigt, dass eine Migration notwendig ist, um Sicherheit, Stabilität und Zukunftsfähigkeit zu gewährleisten.
+
+### Beispiel Bilder wie das System momentan aussieht:
+![Screenshot 1](../Bilder/Screenshot%202026-03-17%20151435.png)
+![Screenshot 2](../Bilder/Screenshot%202026-03-17%20151459.png)
+![Screenshot 3](../Bilder/Screenshot%202026-03-17%20151524.png)
 ---
 
 ## 9. Gantt Diagram
