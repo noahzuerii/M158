@@ -111,10 +111,11 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    User --> DNS[crmserver.ch]
-    DNS --> Web[Webserver VM<br>Apache/Nginx]
-    Web --> App[Vtiger CRM (neu)]
-    App --> DB[DB Server<br>MariaDB]
+    User[Benutzer] --> DNS[DNS crmserver.ch]
+    DNS --> Web[Webserver VM Apache oder Nginx]
+    Web --> App[Vtiger CRM neu]
+    App --> DB[Datenbank Server MariaDB]
+
 ```
 
 ---
