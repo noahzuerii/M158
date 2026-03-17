@@ -1,9 +1,4 @@
 # Phase 1: Projektplan (Auftrag #1) - CRM Migration
-
-**Modul:** Kompetenznachweis M158 LB2  
-**Schule:** Technische Berufsschule Zürich  
-**Projekt:** CRM Migration
-
 ## 1. Ausgangslage und Projektziele
 Das bestehende CRM-System (`crmserver.sample.ch`) wird aktuell als lokale virtuelle Maschine (on-premise) betrieben. Im Rahmen dieses Projekts erfolgt eine umfassende Modernisierung. Der Auftrag umfasst die vollständige Migration auf ein neues Betriebssystem (OS) mit einem neuen Web- und Datenbank-Server. Dabei muss zwingend sichergestellt werden, dass die Datenmigration komplett und verlustfrei abläuft und das Sicherheitsniveau der gesamten Infrastruktur spürbar erhöht wird.
 
