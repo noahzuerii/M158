@@ -243,7 +243,7 @@ Die Applikation ist grundsätzlich funktionsfähig, weist jedoch mehrere Schwäc
 
 ### Schlussfolgerung
 
-Das CRM-System ist aktuell noch betriebsfähig, jedoch technisch veraltet und nur eingeschränkt stabil. Die Analyse bestätigt, dass eine Migration notwendig ist, um Sicherheit, Stabilität und Zukunftsfähigkeit zu gewährleisten.
+- Das CRM-System ist aktuell noch betriebsfähig, jedoch technisch veraltet und nur eingeschränkt stabil. Die Analyse bestätigt, dass eine Migration notwendig ist, um Sicherheit, Stabilität und Zukunftsfähigkeit zu gewährleisten.
 ---
 
 ## 9. Gantt Diagram
