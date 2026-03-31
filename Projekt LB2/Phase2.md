@@ -130,9 +130,14 @@ sudo ufw enable
 
 ## 16. Webserver Setup
 
+> **Hinweis:** Es wird **PHP 5.6** verwendet, da Vtiger CRM keine höheren PHP-Versionen unterstützt. Neuere PHP-Versionen sind mit der eingesetzten Vtiger-Version inkompatibel.
+
 ```bash
 sudo apt install apache2 -y
-sudo apt install php php-mysql php-cli php-curl php-xml php-mbstring php-gd php-zip libapache2-mod-php -y
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt update
+sudo apt install php5.6 php5.6-mysql php5.6-cli php5.6-curl php5.6-xml php5.6-mbstring php5.6-gd php5.6-zip libapache2-mod-php5.6 -y
 ```
 
 ```bash
