@@ -29,6 +29,7 @@ Dieses Repository enthält die Übungen und Lösungen zum Modul M158. Im Modul g
 | Datei | Beschreibung |
 |-------|-------------|
 | [`Phase1.md`](./Projekt%20LB2/Phase1.md) | Projektplan (Auftrag #1) für die CRM-Migration: Ausgangslage, Migrationsvarianten, Ressourcenplanung, Ausfallzeit-Strategie, Zeitplan (KW 12–17) und Testkatalog |
+| [`Phase2.md`](./Projekt%20LB2/Phase2.md) | Aufbau der Zielumgebung (SOLL-System): Architektur (Webserver & DB-Server), Installation & Konfiguration von MariaDB, Apache, UFW, Netplan sowie Dokumentation aller aufgetretenen Probleme und deren Lösungen |
 
 ---
 
@@ -39,6 +40,11 @@ Dieses Repository enthält die Übungen und Lösungen zum Modul M158. Im Modul g
 - Einen geeigneten Migrationsansatz für ein konkretes Szenario wählen und begründen
 - Einen Migrationsplan strukturiert erstellen
 - Absolute und relative Pfade verstehen und anwenden
+- Eine getrennte Server-Infrastruktur (Webserver + Datenbankserver) aufbauen und konfigurieren
+- MariaDB remote-fähig einrichten und absichern (UFW, Benutzerrechte)
+- Apache 2.4 mit VirtualHost und PHP konfigurieren
+- Netzwerkprobleme in virtuellen Umgebungen diagnostizieren und beheben (Netplan, NAT, Host-only)
+- Datenmigration via SCP/SFTP durchführen und Fehler beheben
 
 ---
 
@@ -46,3 +52,10 @@ Dieses Repository enthält die Übungen und Lösungen zum Modul M158. Im Modul g
 
 - Markdown (`.md`) für die Dokumentation
 - Git / GitHub für die Versionsverwaltung
+- **Apache 2.4** – Webserver auf dem SOLL-System
+- **MariaDB** – Datenbanksystem auf dem SOLL-System
+- **PHP** – Serverseitige Skriptsprache für Vtiger CRM
+- **UFW** – Firewall-Konfiguration unter Ubuntu
+- **Netplan** – Netzwerkkonfiguration unter Ubuntu
+- **VMware** – Virtualisierungsplattform (Host-only + NAT Netzwerk)
+- **SSH / SCP / SFTP** – Fernzugriff und Dateiübertragung
