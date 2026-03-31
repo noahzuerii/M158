@@ -223,22 +223,176 @@ mysql -h 192.168.42.134 -u vtigeruser -p
 
 ### Problem: Passwort vergessen (VM Login)
 
+Während der Installation wurde das Benutzerpasswort vergessen, wodurch kein Login mehr möglich war.
+
 ### Lösung:
-Recovery Mode → passwd Benutzer
+
+Die Wiederherstellung erfolgte über den Recovery Mode:
+
+1. VM starten und GRUB-Menü öffnen
+2. „Advanced options for Ubuntu“ auswählen
+3. „Recovery Mode“ starten
+4. Root-Shell öffnen
+
+Dann:
+
+```bash
+mount -o remount,rw /
+ls /home
+passwd noah
+reboot
+```
 
 ---
 
 ### Problem: Copy/Paste in VM schwierig
 
+Die Arbeit über die VM-Konsole erschwerte das Einfügen von Befehlen erheblich.
+
 ### Lösung:
-SSH verwenden oder VMware Tools installieren
+
+Es wurde SSH verwendet, um die Server komfortabel zu administrieren:
+
+```bash
+ssh noah@192.168.42.135
+ssh noah@192.168.42.134
+```
+
+Zusätzlich wurde SSH installiert und aktiviert:
+
+```bash
+sudo apt install openssh-server -y
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+
+Alternative Lösung:
+
+```bash
+sudo apt install open-vm-tools -y
+reboot
+```
 
 ---
 
 ### Problem: Unterschiedliche Netzwerke
 
-### Ursache:
-- Web und DB in verschiedenen Subnetzen
+Der Webserver und der Datenbankserver befanden sich initial in unterschiedlichen Netzwerken:
+
+- Webserver: 172.x.x.x
+- Datenbankserver: 192.168.x.x
+
+Dadurch war keine Kommunikation möglich.
 
 ### Lösung:
-- Beide VMs ins gleiche Netzwerk setzen
+
+Beide VMs wurden in dasselbe Netzwerk gebracht (VMware):
+
+- Adapter 1: NAT (Internet)
+- Adapter 2: Host-only (intern)
+
+---
+
+### Problem: Kein Internetzugang
+
+Nach der Umstellung auf Host-only Netzwerk funktionierte kein Internetzugang mehr.
+
+Fehlermeldung:
+
+```
+Network is unreachable
+```
+
+### Ursache:
+
+- NAT Interface war nicht aktiv
+
+### Lösung:
+
+Interface aktivieren:
+
+```bash
+ip a
+sudo ip link set ens37 up
+```
+
+Netzwerk konfigurieren:
+
+```bash
+sudo nano /etc/netplan/*.yaml
+```
+
+```yaml
+network:
+  version: 2
+  ethernets:
+    ens33:
+      dhcp4: true
+    ens37:
+      dhcp4: true
+```
+
+```bash
+sudo netplan apply
+```
+
+Test:
+
+```bash
+ping 8.8.8.8
+ping google.com
+```
+
+---
+
+### Problem: SCP Fehler (no hostkey alg)
+
+Beim Kopieren der Daten vom alten System trat folgender Fehler auf:
+
+```
+no hostkey alg
+```
+
+### Ursache:
+
+- Alte SSH-Version auf dem alten Server
+
+### Lösung:
+
+Der Transfer wurde vom neuen System oder vom Client gestartet:
+
+```bash
+scp -O -P 2222 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa root@localhost:/var/www/html/vtigercrm noah@192.168.42.135:/tmp/
+```
+
+---
+
+### Problem: Datenbank nicht erreichbar
+
+Der Webserver konnte initial keine Verbindung zur Datenbank herstellen.
+
+### Ursache:
+
+- MariaDB nur auf localhost gebunden
+
+### Lösung:
+
+```bash
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+```
+
+```ini
+bind-address = 0.0.0.0
+```
+
+```bash
+sudo systemctl restart mariadb
+```
+
+Zusätzlich wurde der Zugriff eingeschränkt:
+
+```sql
+CREATE USER 'vtigeruser'@'192.168.42.135' IDENTIFIED BY 'StrongPassword!';
+GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'192.168.42.135';
+FLUSH PRIVILEGES;
+```
