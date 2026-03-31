@@ -401,3 +401,85 @@ CREATE USER 'vtigeruser'@'192.168.42.135' IDENTIFIED BY 'StrongPassword!';
 GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'192.168.42.135';
 FLUSH PRIVILEGES;
 ```
+
+---
+
+## 22. Auftrag #8 - Adminer im Webroot integriert
+
+### Umsetzung
+
+Adminer wurde in den Webroot von Vtiger verschoben:
+
+```bash
+sudo mv /var/www/html/adminer /var/www/html/vtigercrm/
+```
+
+Anschliessend wurden die Berechtigungen gesetzt:
+
+```bash
+sudo chown -R www-data:www-data /var/www/html/vtigercrm/adminer
+sudo find /var/www/html/vtigercrm/adminer -type d -exec chmod 755 {} \;
+sudo find /var/www/html/vtigercrm/adminer -type f -exec chmod 644 {} \;
+```
+
+### Zugriff
+
+http://crm.local/adminer
+
+### Funktionen
+
+- SQL-Queries ausführen
+- Daten anzeigen und bearbeiten
+- Export/Import von Datenbanken
+
+### Ergebnis
+
+- Erfolgreicher Zugriff auf die Datenbank über das Webinterface
+- Migration und Verwaltung vereinfacht
+
+---
+
+## 23. Auftrag #9 - SFTP (Secure File Transfer)
+
+### Ziel
+
+Sicherer Zugriff auf das System zur Datenübertragung.
+
+### Umsetzung
+
+Der Zugriff erfolgt über SFTP, welches standardmässig im SSH-Dienst integriert ist.
+
+Verbindung vom Client:
+
+```bash
+sftp noah@192.168.42.135
+```
+
+Alternativ mit Hostname:
+
+```bash
+sftp noah@crm.local
+```
+
+### Eigenschaften
+
+- Verschlüsselte Verbindung (SSH)
+- Port: 22
+- Authentifizierung via Benutzer/Passwort
+
+### Vorteile
+
+- Keine zusätzliche Installation nötig
+- Sicherer Datentransfer
+- Einfach integrierbar
+
+### Einsatz im Projekt
+
+- Übertragung von Vtiger-Dateien
+- Migration von Daten
+- Verwaltung von Webinhalten
+
+### Ergebnis
+
+- Sicherer Zugriff auf das System gewährleistet
+- Datenmigration effizient unterstützt
